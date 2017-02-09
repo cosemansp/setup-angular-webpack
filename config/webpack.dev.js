@@ -15,10 +15,8 @@ module.exports = webpackMerge(commonConfig, {
 
   module: {
     rules: [
-      // handle all css files outside the app folder as embedded styles
       {
         test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
         loader: 'style-loader!css-loader?sourceMap',
       },
     ]

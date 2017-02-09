@@ -19,40 +19,27 @@ module.exports = {
 
   module: {
     rules: [
-      // typescript handling + angular2 template handing
-      // see: https://github.com/TheLarkInn/angular2-template-loader
       {
         test: /\.ts$/,
         loaders: [
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: helpers.root('src', 'tsconfig.json')
+              configFileName: helpers.root('tsconfig.json')
             }
           },
           'angular2-template-loader'
         ],
         exclude: [/\.(spec)\.ts$/]
       },
-
-      // to import 'mycomponent.html'
       {
         test: /\.html$/,
         loader: 'html-loader'
       },
-
-      // to import images or fonts
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file-loader?name=assets/[name].[hash].[ext]'
       },
-
-      // handle all css files in the app folder as raw (string)
-      {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw-loader'
-      }
     ]
   },
 

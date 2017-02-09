@@ -6,5 +6,5 @@
 // the global window
 interface Window {
   fetch:(url: string, options?: {}) => Promise<any>
-  Response: any;
+  Response: any
 }

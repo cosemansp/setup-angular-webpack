@@ -1,6 +1,5 @@
 module.exports = require('./config/webpack.dev.js');
 
-
 const env = process.env.NODE_ENV || 'development'
 
 function config () {
@@ -18,5 +17,3 @@ function config () {
 }
 
 module.exports = require(`./config/webpack.${config()}.js`)
-
-console.log(module.exports.module.rules)
