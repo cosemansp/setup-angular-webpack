@@ -24,9 +24,9 @@ module.exports = {
         loaders: [
           {
             loader: 'awesome-typescript-loader',
-            options: {
-              configFileName: helpers.root('tsconfig.json')
-            }
+            // options: {
+            //   configFileName: helpers.root('tsconfig.json')
+            // }
           },
           'angular2-template-loader'
         ],
@@ -73,4 +73,4 @@ module.exports = {
 };
 
 console.log('App Version: ', pkg.version)
-console.log('Build Env: ', ENV)
+console.log('Build Env:   ', ENV)

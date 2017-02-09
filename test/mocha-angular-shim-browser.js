@@ -1,3 +1,6 @@
+/* this shim is used to run Angular unit tests the browser with webpack */ 
+
+// Load polyfills
 require('core-js/es6')
 require('core-js/es7/reflect')
 
@@ -9,7 +12,7 @@ require('zone.js/dist/async-test')
 require('zone.js/dist/fake-async-test')
 require('zone.js/dist/mocha-patch')
 
-// load testing modules
+// Setup Angular TestBed
 var testing = require('@angular/core/testing')
 var browser = require('@angular/platform-browser-dynamic/testing')
 testing.TestBed.initTestEnvironment(browser.BrowserDynamicTestingModule, browser.platformBrowserDynamicTesting())

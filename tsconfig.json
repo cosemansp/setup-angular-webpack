@@ -8,14 +8,22 @@
         "experimentalDecorators": true,
         "lib": [ "es2015", "dom" ],
         "noImplicitAny": false,
-        "suppressImplicitAnyIndexErrors": true
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "./build"
     },
     "compileOnSave": false,
     "exclude": [
-        "node_modules/*",
-        "**/*-aot.ts"
+        "node_modules",
+        "dist",
+        "**/*.ngfactory.ts",
+        "src/main.aot.ts"
     ],
     "awesomeTypescriptLoaderOptions": {
         "silent": true
+    },
+    "angularCompilerOptions": {
+        "genDir": ".",
+        "skipMetadataEmit" : true,
+        "entryModule": "src/app/app.module#MainModule"
     }
 }

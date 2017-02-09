@@ -1,12 +1,15 @@
+/* this shim is used to run Angular unit tests in mocha */ 
+
+// Setup Virtual DOM (jsdom)
 var jsdom = require('jsdom');
 var document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 var window = document.defaultView;
-
 global.document = document;
 global.HTMLElement = window.HTMLElement;
 global.XMLHttpRequest = window.XMLHttpRequest;
 global.Node = window.Node;
 
+// Load polyfills
 require('core-js/es6');
 require('core-js/es7/reflect');
 
@@ -17,7 +20,7 @@ require('zone.js/dist/sync-test');
 require('zone.js/dist/async-test');
 require('zone.js/dist/fake-async-test');
 
+// Setup Angular TestBed
 var testing = require('@angular/core/testing');
 var browser = require('@angular/platform-browser-dynamic/testing');
-
 testing.TestBed.initTestEnvironment(browser.BrowserDynamicTestingModule, browser.platformBrowserDynamicTesting());

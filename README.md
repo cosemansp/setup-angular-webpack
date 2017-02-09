@@ -9,7 +9,8 @@ Script | Description
  serve | Run webpack-dev-server as http server & browser
  serve:prod | Build for production and launch http server & browser
  build | Webpack bundle for development
- build:prod | Optimised webpack build for production
+ build:prod | Optimized webpack build for production
+ build:prod:aot | AOT optimized webpack build for production
  test | Runs unit tests with mocha in node & jsdom
  test:serve | Runs unit tests with mocha in browser
 
@@ -21,6 +22,7 @@ Script | Description
 - Mocha/Chai/Sinon
 - Mocha-WebPack / JsDOM
 - Yarn
+- ngc
 
 ## Linting
 
@@ -35,7 +37,6 @@ Mocha, WebPack and JSDom. This makes a fast and flexible test solution.
 
 This setup is work in progress. Following topics will be added:
 
-- ngc support
 - more unit-test examples
 - docker support 
 
