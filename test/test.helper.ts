@@ -6,3 +6,6 @@ const chaiSubset = require('chai-subset')
 chai.use(chaiAsPromised)
 chai.use(chaiString)
 chai.use(chaiSubset)
+
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/toPromise'

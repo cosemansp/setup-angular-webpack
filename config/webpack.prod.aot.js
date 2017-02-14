@@ -1,8 +1,8 @@
-var webpack = require('webpack');
-var webpackMerge = require('webpack-merge');
-var prodConfig = require('./webpack.prod.js');
+var webpack = require('webpack')
+var webpackMerge = require('webpack-merge')
+var prodConfig = require('./webpack.prod.js')
 
-module.exports = webpackMerge(prodConfig, {
+module.exports = webpackMerge.smart(prodConfig, {
 
   entry: {
     'polyfills': './src/polyfills.ts',

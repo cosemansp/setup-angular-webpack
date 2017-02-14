@@ -7,12 +7,6 @@ const helpers = require('./helpers');
 const ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
-  entry: {
-    'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
-    'app': './src/main.ts'
-  },
-
   resolve: {
     extensions: ['.ts', '.js']
   },
@@ -22,13 +16,9 @@ module.exports = {
       {
         test: /\.ts$/,
         loaders: [
-          {
-            loader: 'awesome-typescript-loader',
-            // options: {
-            //   configFileName: helpers.root('tsconfig.json')
-            // }
-          },
-          'angular2-template-loader'
+          'awesome-typescript-loader',
+          'angular2-template-loader',
+          'angular-router-loader'
         ],
         exclude: [/\.(spec)\.ts$/]
       },
@@ -51,11 +41,6 @@ module.exports = {
       helpers.root('./src'), // location of your src
       {} // a map of your routes
     ),
-
-    // split bundles
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills']
-    }),
 
     // inject process.env
     new webpack.DefinePlugin({

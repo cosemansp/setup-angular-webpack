@@ -16,7 +16,8 @@
         "node_modules",
         "dist",
         "**/*.ngfactory.ts",
-        "src/main.aot.ts"
+        "src/main.aot.ts",
+        "**/*.spec.ts"
     ],
     "awesomeTypescriptLoaderOptions": {
         "silent": true
@@ -24,6 +25,6 @@
     "angularCompilerOptions": {
         "genDir": ".",
         "skipMetadataEmit" : true,
-        "entryModule": "src/app/app.module#MainModule"
+        "entryModule": "src/app/app.module#AppModule"
     }
 }
